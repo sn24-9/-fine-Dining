@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <!-- reuse same header/nav as index -> for brevity copy the nav block or create a server include in production -->
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+      </nav>
+      <button id="mobileBtn2" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" /></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-16">
+    <section class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-seriflux">Our Story</h2>
+        <p class="mt-6 text-gray-300">La Elegancia was founded on the belief that dining is an art. Our executive chef curates seasonal tasting menus inspired by classic techniques and modern sensibilities.</p>
+        <p class="mt-4 text-gray-300">With a focus on impeccable sourcing and service, we strive to create memorable evenings for every guest.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="restaurant interior" class="rounded-lg shadow-lg w-full h-80 object-cover">
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <h3 class="text-2xl font-seriflux">Meet the Team</h3>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Chef" class="w-48 h-48 object-cover rounded-full mx-auto">
+          <h4 class="mt-4 font-semibold">Chef Marco Rossi</h4>
+          <p class="text-gray-400 text-sm">Executive Chef & Founder</p>
+        </div>
+
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1545996124-1f2f1a2d3b9b" alt="Sommelier" class="w-48 h-48 object-cover rounded-full mx-auto">
+          <h4 class="mt-4 font-semibold">Elena Dupont</h4>
+          <p class="text-gray-400 text-sm">Head Sommelier</p>
+        </div>
+
+        <div class="text-center">
+          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c" alt="Manager" class="w-48 h-48 object-cover rounded-full mx-auto">
+          <h4 class="mt-4 font-semibold">Luca Moretti</h4>
+          <p class="text-gray-400 text-sm">General Manager</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-900 py-8 text-center text-sm text-gray-500">© 2025 La Elegancia</footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

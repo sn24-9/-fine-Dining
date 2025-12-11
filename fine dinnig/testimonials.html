@@ -1,0 +1,83 @@
+<!-- filepath: c:\Users\MR ASANTE\fine dinnig\testimonials.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Testimonials — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html class="flex items-center gap-3">
+        <div cla"ss="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveMobile" class="mt-2 px-4 py-2 border border-gold rounded text-sm w-full">Reserve</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-seriflux text-center">What Guests Say</h2>
+    <p class="text-center text-gray-400 mt-3">A selection of recent testimonials from our valued guests.</p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <blockquote class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <p class="text-gray-300">"An unforgettable evening — impeccable service and flavors that linger."</p>
+        <footer class="mt-4 text-sm text-gray-500">— Alexis M.</footer>
+      </blockquote>
+      <blockquote class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <p class="text-gray-300">"The tasting menu was a revelation. Perfect pairings and a warm atmosphere."</p>
+        <footer class="mt-4 text-sm text-gray-500">— Jordan S.</footer>
+      </blockquote>
+      <blockquote class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <p class="text-gray-300">"Exceptional attention to detail. Highly recommend for special occasions."</p>
+        <footer class="mt-4 text-sm text-gray-500">— Priya K.</footer>
+      </blockquote>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-900 py-8 text-center text-sm text-gray-500">© 2025 La Elegancia</footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

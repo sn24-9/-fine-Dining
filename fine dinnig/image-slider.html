@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="image-slider.html" class="text-gold">Gallery</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+    <h2 class="text-3xl font-seriflux text-center">Our Gallery</h2>
+    <p class="text-center text-gray-400 mt-2">A selection of moments and dishes from La Elegancia.</p>
+
+    <section class="mt-8 max-w-4xl mx-auto">
+      <div id="slider" class="relative overflow-hidden rounded-lg border border-gray-800 bg-black">
+        <div id="slides" class="flex transition-transform duration-500">
+          <img class="w-full flex-shrink-0 object-cover h-80 md:h-96" src="https://images.unsplash.com/photo-1543353071-087092ec393a" alt="Dining room">
+          <img class="w-full flex-shrink-0 object-cover h-80 md:h-96" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Interior">
+          <img class="w-full flex-shrink-0 object-cover h-80 md:h-96" src="https://images.unsplash.com/photo-1604908177522-1b8b4f8b0f77" alt="Dish">
+          <img class="w-full flex-shrink-0 object-cover h-80 md:h-96" src="https://images.unsplash.com/photo-1541542684-2b6b1f2ca8a8" alt="Wagyu">
+        </div>
+
+        <!-- controls -->
+        <button id="prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">
+          ‹
+        </button>
+        <button id="next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">
+          ›
+        </button>
+
+        <!-- dots -->
+        <div id="dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-900 py-8 text-center text-sm text-gray-500">© 2025 La Elegancia</footer>
+
+  <script>
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = slidesEl.children;
+      const total = slides.length;
+      const dotsEl = document.getElementById('dots');
+      let index = 0;
+      let playing = true;
+      let timer;
+
+      function update() {
+        slidesEl.style.transform = `translateX(-${index * 100}%)`;
+        Array.from(dotsEl.children).forEach((d,i) => d.classList.toggle('bg-gold', i===index));
+      }
+
+      function go(n){
+        index = (n + total) % total;
+        update();
+      }
+
+      function next(){ go(index+1); }
+      function prev(){ go(index-1); }
+
+      // build dots
+      for(let i=0;i<total;i++){
+        const b = document.createElement('button');
+        b.className = 'w-3 h-3 rounded-full bg-gray-600';
+        b.addEventListener('click', ()=>{ go(i); resetTimer(); });
+        dotsEl.appendChild(b);
+      }
+      update();
+
+      document.getElementById('next').addEventListener('click', ()=>{ next(); resetTimer(); });
+      document.getElementById('prev').addEventListener('click', ()=>{ prev(); resetTimer(); });
+
+      function startTimer(){ timer = setInterval(next, 4000); }
+      function stopTimer(){ clearInterval(timer); }
+      function resetTimer(){ stopTimer(); startTimer(); }
+
+      startTimer();
+
+      // pause on hover
+      const slider = document.getElementById('slider');
+      slider.addEventListener('mouseenter', ()=> stopTimer());
+      slider.addEventListener('mouseleave', ()=> startTimer());
+    })();
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

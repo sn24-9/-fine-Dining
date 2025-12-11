@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menu — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+      <button id="mobileBtn" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" /></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveMobile" class="mt-2 px-4 py-2 border border-gold rounded text-sm w-full">Reserve</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+    <h2 class="text-4xl font-seriflux text-center">Our Menu</h2>
+    <p class="text-center text-gray-400 mt-3">Seasonal tasting menus & à la carte selections</p>
+
+    <div class="mt-8 flex justify-center gap-4">
+      <button data-filter="all" class="filterBtn px-4 py-2 border border-gray-700 rounded text-sm">All</button>
+      <button data-filter="starters" class="filterBtn px-4 py-2 border border-gray-700 rounded text-sm">Starters</button>
+      <button data-filter="mains" class="filterBtn px-4 py-2 border border-gray-700 rounded text-sm">Mains</button>
+      <button data-filter="desserts" class="filterBtn px-4 py-2 border border-gray-700 rounded text-sm">Desserts</button>
+    </div>
+
+    <div id="menuGrid" class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- menu items with data-category attribute -->
+
+      <div class="p-6 rounded-lg bg-[#0d0d0d] border border-gray-800" data-category="starters">
+        <h4 class="font-seriflux text-xl">Truffle Arancini</h4>
+        <p class="text-gray-400 mt-2">Crispy arborio balls, truffle aioli.</p>
+      </div>
+
+      <div class="p-6 rounded-lg bg-[#0d0d0d] border border-gray-800" data-category="mains">
+        <h4 class="font-seriflux text-xl">Herb Crusted Salmon</h4>
+        <p class="text-gray-400 mt-2">Saffron potato purée, lemon emulsion.</p>
+      </div>
+
+      <div class="p-6 rounded-lg bg-[#0d0d0d] border border-gray-800" data-category="desserts">
+        <h4 class="font-seriflux text-xl">Chocolate Terrine</h4>
+        <p class="text-gray-400 mt-2">70% dark chocolate, hazelnut crumble.</p>
+      </div>
+
+      <div class="p-6 rounded-lg bg-[#0d0d0d] border border-gray-800" data-category="mains">
+        <h4 class="font-seriflux text-xl">Wagyu Striploin</h4>
+        <p class="text-gray-400 mt-2">Charred broccoli, bordelaise.</p>
+      </div>
+
+      <div class="p-6 rounded-lg bg-[#0d0d0d] border border-gray-800" data-category="starters">
+        <h4 class="font-seriflux text-xl">Caviar on Blini</h4>
+        <p class="text-gray-400 mt-2">Creme fraiche, chives.</p>
+      </div>
+
+      <div class="p-6 rounded-lg bg-[#0d0d0d] border border-gray-800" data-category="desserts">
+        <h4 class="font-seriflux text-xl">Vanilla Bean Soufflé</h4>
+        <p class="text-gray-400 mt-2">Gold leaf finish.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-gray-900 py-8 text-center text-sm text-gray-500">© 2025 La Elegancia</footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

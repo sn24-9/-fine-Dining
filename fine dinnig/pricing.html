@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pricing — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-16">
+    <section class="text-center">
+      <h2 class="text-4xl font-seriflux">Our Offerings & Pricing</h2>
+      <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Transparent pricing for our tasting menus, chef's table experiences, private events, and catering services. Contact us for custom proposals.</p>
+    </section>
+
+    <section class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3">
+      <div class="bg-[#0d0d0d] border border-gray-800 rounded-lg p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="font-seriflux text-2xl">Tasting Menu</h3>
+          <p class="mt-2 text-gray-400">Seasonal 6-course tasting menu with optional wine pairing.</p>
+          <div class="mt-4 text-3xl font-semibold">$125 <span class="text-sm text-gray-400">/ per person</span></div>
+          <ul class="mt-4 text-gray-400 list-disc list-inside text-sm">
+            <li>6 curated courses</li>
+            <li>Optional sommelier pairing +$65</li>
+            <li>Dietary accommodations available</li>
+          </ul>
+        </div>
+        <div class="mt-6">
+          <a href="contact.html" class="block text-center px-4 py-3 bg-gold text-black rounded">Reserve Tasting</a>
+        </div>
+      </div>
+
+      <div class="bg-[#0d0d0d] border border-gold rounded-lg p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="font-seriflux text-2xl">Chef's Table</h3>
+          <p class="mt-2 text-gray-400">Intimate chef-led experience for up to 8 guests.</p>
+          <div class="mt-4 text-3xl font-semibold">$95 <span class="text-sm text-gray-400">/ per person</span></div>
+          <ul class="mt-4 text-gray-400 list-disc list-inside text-sm">
+            <li>Exclusive kitchen access</li>
+            <li>Custom tasting menu</li>
+            <li>Personal interaction with the chef</li>
+          </ul>
+        </div>
+        <div class="mt-6">
+          <a href="contact.html" class="block text-center px-4 py-3 bg-black text-gold border border-gold rounded">Book Chef's Table</a>
+        </div>
+      </div>
+
+      <div class="bg-[#0d0d0d] border border-gray-800 rounded-lg p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="font-seriflux text-2xl">Private Events</h3>
+          <p class="mt-2 text-gray-400">Bespoke events for small to large gatherings — pricing varies by guest count and services.</p>
+          <div class="mt-4 text-3xl font-semibold">From $1500 <span class="text-sm text-gray-400">/ event</span></div>
+          <ul class="mt-4 text-gray-400 list-disc list-inside text-sm">
+            <li>Tailored menus & staffing</li>
+            <li>Private rooms & AV options</li>
+            <li>Dedicated events manager</li>
+          </ul>
+        </div>
+        <div class="mt-6">
+          <a href="contact.html#events" class="block text-center px-4 py-3 border border-gold rounded text-sm text-gray-300 hover:bg-gold hover:text-black transition">Inquire Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10">
+      <h4 class="text-2xl font-seriflux">Catering Packages</h4>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-[#0d0d0d] p-4 rounded border border-gray-800">
+          <h5 class="font-semibold">Plated Service</h5>
+          <p class="text-gray-400 text-sm mt-2">Starting at $45/person — three-course plated service with staff.</p>
+        </div>
+        <div class="bg-[#0d0d0d] p-4 rounded border border-gray-800">
+          <h5 class="font-semibold">Buffet</h5>
+          <p class="text-gray-400 text-sm mt-2">Starting at $35/person — curated stations and hot items.</p>
+        </div>
+        <div class="bg-[#0d0d0d] p-4 rounded border border-gray-800">
+          <h5 class="font-semibold">Passed Hors d'Oeuvres</h5>
+          <p class="text-gray-400 text-sm mt-2">Starting at $25/person — mix of seasonal small bites.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12 bg-gradient-to-r from-[#0a0a0a] to-[#0d0d0d] p-8 rounded-lg flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <h4 class="text-2xl font-seriflux">Request a Custom Proposal</h4>
+        <p class="text-gray-400 mt-2">Tell us about your event size, date, and vision — we'll prepare a tailored proposal and sample menu.</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="contact.html#events" class="px-5 py-3 border border-gold rounded hover:bg-gold hover:text-black transition">Contact Events</a>
+        <a href="contact.html#proposal" class="px-5 py-3 text-sm text-gray-300 self-center">Request Proposal</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-900 py-8 text-center text-sm text-gray-500">© 2025 La Elegancia</footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

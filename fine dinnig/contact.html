@@ -1,0 +1,147 @@
+<!-- FILE: contact.html -->
+<!doctype >
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+      <button id="mobileBtn" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" /></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveMobile" class="mt-2 px-4 py-2 border border-gold rounded text-sm w-full">Reserve</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+    <h2 class="text-4xl font-seriflux text-center">Contact & Reservations</h2>
+    <p class="text-center text-gray-400 mt-3">For reservations, private events, or inquiries, please get in touch.</p>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-seriflux text-2xl">Reserve a Table</h3>
+        <p class="text-gray-400 mt-2">Use the form or call us at <strong>+1 234 567 890</strong>.</p>
+
+        <form id="reserveForm" class="mt-6 grid grid-cols-1 gap-4">
+          <input name="name" placeholder="Full name" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" required>
+          <input name="email" type="email" placeholder="Email" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" required>
+          <input name="date" type="date" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" required>
+          <input name="time" type="time" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" required>
+          <select name="guests" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3">
+            <option>2 Guests</option>
+            <option>4 Guests</option>
+            <option>6 Guests</option>
+            <option>Private Event</option>
+          </select>
+          <textarea name="notes" placeholder="Special requests" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3"></textarea>
+          <div class="flex gap-4">
+            <button type="submit" class="px-6 py-3 bg-gold text-black rounded">Request Reservation</button>
+            <button type="button" id="clearForm" class="px-6 py-3 border border-gray-700 rounded">Clear</button>
+          </div>
+        </form>
+
+      </div>
+
+      <div>
+        <h3 class="font-seriflux text-2xl">Visit Us</h3>
+        <p class="text-gray-400 mt-2">123 Luxury Avenue, New York</p>
+        <div class="mt-6 bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+          <h4 class="font-semibold">Hours</h4>
+          <p class="text-gray-400 text-sm mt-2">Tue–Sat: 5:30pm – 11:00pm<br>Sun–Mon: Closed</p>
+          <h4 class="font-semibold mt-4">Parking</h4>
+          <p class="text-gray-400 text-sm mt-2">Valet available on-site; street parking nearby.</p>
+          <h4 class="font-semibold mt-4">Events & Private Dining</h4>
+          <p class="text-gray-400 text-sm mt-2">For events and private dining inquiries, email <a href="mailto:events@laelegancia.com" class="underline">events@laelegancia.com</a> or use the contact form.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <footer class="bg-[#0b0b0b] py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:justify-between gap-8">
+        <div>
+          <h5 class="text-lg font-seriflux">About La Elegancia</h5>
+          <p class="text-gray-400 text-sm mt-2">La Elegancia is a premier dining destination, offering an exquisite menu and an unparalleled atmosphere.</p>
+        </div>
+        <div>
+          <h5 class="text-lg font-seriflux">Contact Us</h5>
+          <p class="text-gray-400 text-sm mt-2">Email: <a href="mailto:info@laelegancia.com" class="underline">info@laelegancia.com</a></p>
+          <p class="text-gray-400 text-sm">Phone: <a href="tel:+1234567890" class="underline">+1 234 567 890</a></p>
+        </div>
+        <div>
+          <h5 class="text-lg font-seriflux">Follow Us</h5>
+          <div class="flex gap-4 mt-2">
+            <a href="#" class="text-gray-400 hover:text-gold transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h13.5M8 12l4.5 4.5M8 12l4.5-4.5" /></svg></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H3.375M16 12l-4.5 4.5M16 12l-4.5-4.5" /></svg></a>
+            <a href="#" class="text-gray-400 hover:text-gold transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h13.5M4 12l4.5 4.5M4 12l4.5-4.5" /></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-gray-800 pt-6 text-center text-sm">
+        <p class="text-gray-400">&copy; 2023 La Elegancia. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Mobile navigation toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // Clear form functionality
+    document.getElementById('clearForm').addEventListener('click', () => {
+      document.getElementById('reserveForm').reset();
+    });
+  </script>
+</body>
+</html>

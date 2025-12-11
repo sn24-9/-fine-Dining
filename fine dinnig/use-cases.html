@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Use Cases — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="use-cases.html" class="text-gold">Use Cases</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+      <button id="mobileBtnUse" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" /></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveMobile" class="mt-2 px-4 py-2 border border-gold rounded text-sm w-full">Reserve</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-16">
+    <section class="text-center">
+      <h2 class="text-4xl font-seriflux">How We Serve</h2>
+      <p class="mt-4 text-gray-400 max-w-2xl mx-auto">From intimate chef's tables to large corporate events, La Elegancia provides bespoke culinary experiences tailored to your needs.</p>
+    </section>
+
+    <section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <article class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <h3 class="font-seriflux text-xl">Private Dining</h3>
+        <p class="mt-3 text-gray-400">Exclusive rooms, customizable tasting menus, and a dedicated sommelier for a completely private experience.</p>
+        <ul class="mt-3 text-gray-400 list-disc list-inside text-sm">
+          <li>Bespoke multi-course menus</li>
+          <li>Private wine pairing</li>
+          <li>Personal service team</li>
+        </ul>
+      </article>
+
+      <article class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <h3 class="font-seriflux text-xl">Corporate Events</h3>
+        <p class="mt-3 text-gray-400">Seamless planning for meetings, launches, and client entertainments with modular menus and AV support.</p>
+        <ul class="mt-3 text-gray-400 list-disc list-inside text-sm">
+          <li>Plated and buffet options</li>
+          <li>Event coordination</li>
+          <li>Custom branding & menus</li>
+        </ul>
+      </article>
+
+      <article class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <h3 class="font-seriflux text-xl">Tastings & Pairings</h3>
+        <p class="mt-3 text-gray-400">Curated wine and tasting events led by our head sommelier and executive chef.</p>
+        <ul class="mt-3 text-gray-400 list-disc list-inside text-sm">
+          <li>Wine dinners</li>
+          <li>Chef's tasting flights</li>
+          <li>Seasonal ingredient showcases</li>
+        </ul>
+      </article>
+
+      <article class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <h3 class="font-seriflux text-xl">Catering</h3>
+        <p class="mt-3 text-gray-400">Off-site catering for special occasions delivered with the same attention to detail as our restaurant service.</p>
+        <ul class="mt-3 text-gray-400 list-disc list-inside text-sm">
+          <li>Full-service catering</li>
+          <li>Passed hors d'oeuvres</li>
+          <li>Custom menu development</li>
+        </ul>
+      </article>
+
+      <article class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <h3 class="font-seriflux text-xl">Chef's Table & Masterclasses</h3>
+        <p class="mt-3 text-gray-400">Intimate chef demonstrations and hands-on classes for food enthusiasts and teams.</p>
+      </article>
+
+      <article class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <h3 class="font-seriflux text-xl">Press & Partnerships</h3>
+        <p class="mt-3 text-gray-400">Media requests, collaborations, and brand partnerships—contact our events team to discuss opportunities.</p>
+      </article>
+    </section>
+
+    <section class="mt-12 bg-gradient-to-r from-[#0a0a0a] to-[#0d0d0d] p-8 rounded-lg flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <h4 class="text-2xl font-seriflux">Plan Your Event</h4>
+        <p class="text-gray-400 mt-2">Reach out to our events team for availability, sample menus, and a tailored proposal.</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="contact.html" class="px-5 py-3 border border-gold rounded hover:bg-gold hover:text-black transition">Contact Events</a>
+        <a href="contact.html#inquire" class="px-5 py-3 text-sm text-gray-300 self-center">Request Proposal</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-900 py-8 text-center text-sm text-gray-500">© 2025 La Elegancia</footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

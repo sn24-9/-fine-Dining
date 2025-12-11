@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign Up — La Elegancia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#c9a94d' }, fontFamily: { seriflux: ['Playfair Display','serif'], sanslux: ['Inter','sans-serif'] } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-gray-100 font-sanslux">
+  <header class="border-b border-gray-900">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveMobile" class="mt-2 px-4 py-2 border border-gold rounded text-sm w-full">Reserve</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="bg-[#0d0d0d] p-8 rounded-lg border border-gray-800">
+        <h2 class="text-2xl font-seriflux">Create an Account</h2>
+        <p class="text-gray-400 mt-2">Join La Elegancia to manage bookings, receive exclusive offers, and access events.</p>
+
+        <form id="signupForm" class="mt-6 grid gap-4">
+          <input id="name" name="name" placeholder="Full name" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" required>
+          <input id="email" name="email" type="email" placeholder="Email" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" required>
+          <input id="password" name="password" type="password" placeholder="Password" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" required>
+          <input id="referral" name="referral" placeholder="Referral Code (scan QR to autofill)" class="bg-[#0b0b0b] border border-gray-800 rounded px-4 py-3" readonly>
+          <div class="flex gap-4">
+            <button type="submit" class="px-6 py-3 bg-gold text-black rounded">Create Account</button>
+            <a href="login.html" class="px-6 py-3 border border-gray-700 rounded self-center">Sign In</a>
+          </div>
+        </form>
+      </div>
+
+      <aside class="bg-[#0d0d0d] p-6 rounded-lg border border-gray-800">
+        <h3 class="font-seriflux text-lg">Scan QR for Referral</h3>
+        <p class="text-gray-400 mt-2 text-sm">Scan a referral QR to apply a code automatically. Allow camera access when prompted.</p>
+
+        <div class="mt-4">
+          <video id="qrVideoSign" class="w-full rounded-md bg-black" playsinline></video>
+          <div class="flex gap-2 mt-3">
+            <button id="startScanSign" class="px-4 py-2 border border-gold rounded text-sm">Start Scan</button>
+            <button id="stopScanSign" class="px-4 py-2 border border-gray-700 rounded text-sm">Stop</button>
+            <label class="px-4 py-2 border border-gray-700 rounded text-sm cursor-pointer">
+              Upload Image
+              <input id="fileInputSign" type="file" accept="image/*" class="hidden">
+            </label>
+          </div>
+
+          <p id="qrResultSign" class="mt-3 text-sm text-gray-400">No code scanned yet.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-900 py-8 text-center text-sm text-gray-500">© 2025 La Elegancia</footer>
+
+  <script>QrScanner && (QrScanner.WORKER_PATH = 'https://unpkg.com/qr-scanner@1.4.2/qr-scanner-worker.min.js');</script>
+  <script src="https://unpkg.com/qr-scanner@1.4.2/qr-scanner.min.js"></script>
+  <script>
+    // QR scanner for signup
+    const videoSign = document.getElementById('qrVideoSign');
+    const resultSign = document.getElementById('qrResultSign');
+    const referralInput = document.getElementById('referral');
+    let scannerSign;
+
+    document.getElementById('startScanSign').addEventListener('click', async () => {
+      if (!scannerSign) {
+        scannerSign = new QrScanner(videoSign, res => {
+          resultSign.textContent = 'Scanned: ' + res;
+          referralInput.value = res;
+        }, { highlightScanRegion: true });
+      }
+      scannerSign.start().catch(e => resultSign.textContent = 'Camera error: ' + e);
+    });
+
+    document.getElementById('stopScanSign').addEventListener('click', () => {
+      if (scannerSign) scannerSign.stop();
+    });
+
+    document.getElementById('fileInputSign').addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      QrScanner.scanImage(file).then(res => {
+        resultSign.textContent = 'Scanned: ' + res;
+        referralInput.value = res;
+      }).catch(() => resultSign.textContent = 'No QR code found in image.');
+    });
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

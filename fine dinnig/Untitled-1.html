@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Elegancia — Fine Dining</title>
+
+  <!-- Tailwind CDN (for quick dev) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#c9a94d',
+            charcoal: '#1f1f1f'
+          },
+          fontFamily: {
+            seriflux: ['Playfair Display', 'serif'],
+            sanslux: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Elegant serif font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#0b0b0b] text-gray-100 font-sanslux leading-relaxed">
+
+  <!-- NAV -->
+  <header class="bg-gradient-to-b from-black/80 to-black/70">
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold/80 to-gold/50 flex items-center justify-center shadow-lg">
+          <span class="text-black font-semibold">LE</span>
+        </div>
+        <div>
+          <h1 class="text-2xl font-seriflux">La Elegancia</h1>
+          <p class="text-xs text-gray-400 -mt-1">Fine Dining • Luxury Cuisine</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-8 items-center text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="use-cases.html" class="hover:text-gold">Use Cases</a>
+        <a href="image-slider.html" class="hover:text-gold">Gallery</a>
+        <a href="testimonials.html" class="hover:text-gold">Testimonials</a>
+        <a href="features.html" class="hover:text-gold">Features</a>
+        <a href="pricing.html" class="hover:text-gold">Pricing</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <a href="login.html" class="hover:text-gold">Login</a>
+        <a href="signup.html" class="hover:text-gold">Sign Up</a>
+        <button id="reserveTop" class="px-4 py-2 border border-gold rounded text-sm hover:bg-gold hover:text-black transition">Reserve</button>
+      </nav>
+
+      <button id="mobileBtn" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" /></svg>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="hidden md:hidden bg-[#080808] border-t border-gray-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="menu.html" class="hover:text-gold">Menu</a>
+        <a href="contact.html" class="hover:text-gold">Contact</a>
+        <button id="reserveMobile" class="mt-2 px-4 py-2 border border-gold rounded text-sm w-full">Reserve</button>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="relative">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543353071-087092ec393a')] bg-cover bg-center filter brightness-50"></div>
+      <div class="relative container mx-auto px-6 py-36 text-center">
+        <h2 class="text-5xl font-seriflux font-semibold text-white">An Evening of Timeless Taste</h2>
+        <p class="mt-6 max-w-2xl mx-auto text-gray-200">Experience culinary mastery in an intimate, candlelit setting. Seasonal tasting menus, world-class sommelier, and impeccable service.</p>
+        <div class="mt-8 flex justify-center gap-4">
+          <a href="menu.html" class="px-6 py-3 border border-gold rounded hover:bg-gold hover:text-black transition">View Menu</a>
+          <button id="heroReserve" class="px-6 py-3 bg-gold rounded text-black font-medium">Reserve a Table</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured dishes -->
+    <section class="container mx-auto px-6 py-20">
+      <h3 class="text-3xl font-seriflux text-center">Chef's Signature</h3>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="bg-[#0f0f0f] p-6 rounded-lg border border-gray-800 hover:shadow-2xl transition">
+          <img src="https://images.unsplash.com/photo-1604908177522-1b8b4f8b0f77" alt="Truffle Risotto" class="w-full h-48 object-cover rounded-md">
+          <h4 class="mt-4 font-semibold font-seriflux text-xl">Black Truffle Risotto</h4>
+          <p class="mt-2 text-gray-300">Creamy arborio, shaved black truffle, aged parmesan.</p>
+        </article>
+
+        <article class="bg-[#0f0f0f] p-6 rounded-lg border border-gray-800 hover:shadow-2xl transition">
+          <img src="https://images.unsplash.com/photo-1541542684-2b6b1f2ca8a8" alt="Wagyu" class="w-full h-48 object-cover rounded-md">
+          <h4 class="mt-4 font-semibold font-seriflux text-xl">Wagyu A5</h4>
+          <p class="mt-2 text-gray-300">Seared to perfection, truffle butter, seasonal vegetables.</p>
+        </article>
+
+        <article class="bg-[#0f0f0f] p-6 rounded-lg border border-gray-800 hover:shadow-2xl transition">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Dessert" class="w-full h-48 object-cover rounded-md">
+          <h4 class="mt-4 font-semibold font-seriflux text-xl">Vanilla Bean Soufflé</h4>
+          <p class="mt-2 text-gray-300">Light, airy, finished with gold dust.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA banner -->
+    <section class="bg-gradient-to-r from-[#0a0a0a] to-[#0d0d0d] py-12">
+      <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="text-2xl font-seriflux">Private Dining & Events</h4>
+          <p class="text-gray-400 mt-2">Host an unforgettable tasting — bespoke menus and dedicated sommelier.</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="contact.html" class="px-5 py-3 border border-gold rounded hover:bg-gold hover:text-black transition">Inquire</a>
+          <a href="contact.html#events" class="px-5 py-3 text-sm text-gray-300 self-center">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-gray-800">
+    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+      <div>
+        © 2025 La Elegancia — All Rights Reserved
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-gold">Privacy</a>
+        <a href="#" class="hover:text-gold">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

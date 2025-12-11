@@ -1,0 +1,122 @@
+import React, { useState } from "react";
+import { AppBar, Toolbar, Button, Container } from "@mui/material";
+
+// ElysianFineDining.jsx
+// Single-file React component for a fine-dining restaurant landing site.
+// - Tailwind CSS utility classes are used for styling (no imports required here).
+// - Replace placeholder images and links with production assets.
+
+export default function ElysianFineDining() {
+  const [page, setPage] = useState("home");
+  const [reservation, setReservation] = useState({ name: "", email: "", date: "", time: "", guests: 2 });
+  const [submitted, setSubmitted] = useState(false);
+
+  const menu = [
+    { section: "Starters", items: [
+      { name: "Citrus Cured Scallop", desc: "Seared scallop, yuzu gel, micro herbs", price: "$18" },
+      { name: "Heritage Beet Tartare", desc: "Goat curd, toasted pistachio, olive oil", price: "$14" }
+    ]},
+    { section: "Mains", items: [
+      { name: "Lamb Two Ways", desc: "Saddle & slow-braised shoulder, rosemary jus", price: "$36" },
+      { name: "Black Cod", desc: "Miso glaze, charred baby leeks, bonito soil", price: "$34" }
+    ]},
+    { section: "Desserts", items: [
+      { name: "Valrhona Chocolate Sphere", desc: "Hazelnut praline, salted caramel", price: "$12" },
+      { name: "Lavender Crème Brûlée", desc: "Shortbread, citrus zest", price: "$11" }
+    ]}
+  ];
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setReservation(prev => ({ ...prev, [name]: value }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
+  const renderHome = () => (
+    <section className="relative py-28 text-center bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541542684-7d6b5a9b0c2f?q=80&w=1600&auto=format&fit=crop')" }}>
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="relative z-10 max-w-3xl mx-auto px-6">
+        <h1 className="text-6xl font-serif font-bold text-white drop-shadow-lg">Elysian Fine Dining</h1>
+        <p className="mt-6 text-gray-200 text-xl leading-relaxed">Where culinary mastery meets timeless elegance. Experience handcrafted tasting menus inspired by the seasons.</p>
+        <div className="mt-10 flex justify-center gap-6">
+          <button onClick={() => setPage('reservation')} className="bg-white text-gray-900 px-6 py-3 rounded-lg font-medium shadow-lg">Book a Table</button>
+          <button onClick={() => setPage('menu')} className="bg-transparent border border-white text-white px-6 py-3 rounded-lg font-medium">View Menu</button>
+        </div>
+      </div>
+    </section>
+  );
+
+  const renderAbout = () => (
+    <section className="py-20 max-w-4xl mx-auto px-6">
+      <h2 className="text-4xl font-serif font-semibold">About Us</h2>
+      <p className="mt-6 text-gray-600 leading-relaxed text-lg">At Elysian, we embrace culinary artistry using seasonal, locally sourced ingredients to create an unforgettable dining journey.</p>
+    </section>
+  );
+
+  const renderMenu = () => (
+    <section className="py-20 max-w-6xl mx-auto px-6">
+      <h2 className="text-4xl font-serif font-semibold">Our Menu</h2>
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {menu.map(section => (
+          <div key={section.section} className="p-6 bg-white shadow rounded-xl">
+            <h3 className="text-xl font-bold mb-4">{section.section}</h3>
+            {section.items.map(item => (
+              <div key={item.name} className="mb-4">
+                <div className="font-semibold">{item.name} - {item.price}</div>
+                <div className="text-sm text-gray-500">{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+
+  const renderReservation = () => (
+    <section className="py-20 bg-gray-100">
+      <div className="max-w-3xl mx-auto px-6 bg-white p-10 shadow-lg rounded-xl">
+        <h1 className="text-4xl font-serif mb-6">Book a Table</h1>
+        <form className="grid grid-cols-1 gap-6">
+          <TextField label="Full Name" variant="outlined" fullWidth />
+          <TextField label="Email" type="email" variant="outlined" fullWidth />
+          <TextField label="Phone" type="tel" variant="outlined" fullWidth />
+          <TextField label="Date" type="date" InputLabelProps={{ shrink: true }} variant="outlined" fullWidth />
+          <TextField label="Time" type="time" InputLabelProps={{ shrink: true }} variant="outlined" fullWidth />
+          <TextField label="Number of Guests" type="number" variant="outlined" fullWidth />
+          <Button variant="contained" size="large">Submit Reservation</Button>
+        </form>
+      </div>
+    </section>
+  );
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <AppBar position="static" color="default" elevation={1}>
+  <Toolbar>
+    <Container maxWidth="lg" className="flex justify-between items-center">
+      <div className="text-2xl font-serif font-semibold">Elysian</div>
+      <nav className="flex gap-4 text-sm">
+        <Button onClick={() => setPage("home")} variant="text">Home</Button>
+        <Button onClick={() => setPage("about")} variant="text">About</Button>
+        <Button onClick={() => setPage("menu")} variant="text">Menu</Button>
+        <Button onClick={() => setPage("reservation")} variant="text">Reservations</Button>
+        <Button onClick={() => setPage("reservation")} variant="contained" color="primary">Book a Table</Button>
+      </nav>
+    </Container>
+  </Toolbar>
+</AppBar>
+
+      <main>
+        {page === "home" && renderHome()}
+        {page === "about" && renderAbout()}
+        {page === "menu" && renderMenu()}
+        {page === "reservation" && renderReservation()}
+      </main>
+    </div>
+  );
+}

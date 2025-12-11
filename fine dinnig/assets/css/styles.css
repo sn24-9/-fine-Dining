@@ -1,0 +1,32 @@
+/* Inquire / Contact section styles */
+#inquire h3 { color: var(--gold); }
+#inquire h4 { color: #e6d9a8; }
+#inquire .container { gap: 1rem; }
+#inquire input, #inquire textarea, #inquire select {
+  background: #0b0b0b;
+  border: 1px solid #27272a;
+  color: #e6e6e6;
+  padding: 0.65rem 0.75rem;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .06s ease;
+}
+#inquire input:focus, #inquire textarea:focus, #inquire select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 6px rgba(201,169,77,0.08);
+  transform: translateY(-1px);
+}
+#inquire .flex button { min-width: 8rem; }
+
+/* Button subtle hover for non-tailwind buttons (progressive enhancement) */
+#inquire button[type="submit"]:hover { transform: translateY(-2px); }
+
+/* Mobile nav transition helper (works alongside existing Tailwind hidden toggle) */
+#mobileNav { transition: max-height .28s ease, opacity .22s ease; overflow: hidden; }
+#mobileNav.hidden { max-height: 0; opacity: 0; }
+#mobileNav:not(.hidden) { max-height: 1000px; opacity: 1; }
+
+/* Accessibility: larger tap areas on small screens */
+@media (max-width: 640px) {
+  #mobileNav a, #mobileNav button { padding: 0.75rem 0.5rem; }
+  #inquire .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+}
